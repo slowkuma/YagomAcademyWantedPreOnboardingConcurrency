@@ -1,24 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YagomAcademyWantedPreOnboardingConcurrency" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="r4U-Am-XEg">
+                                <rect key="frame" x="20" y="178.99999999999997" width="353" height="494.33333333333326"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdJ-gI-3dl" customClass="ImageRowView" customModule="YagomAcademyWantedPreOnboardingConcurrency" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yGo-6s-eAv">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="120" height="77"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="p02-TW-CVR"/>
+                                                    <constraint firstAttribute="height" constant="80" id="uMy-dJ-W9z"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-3c-WJz">
+                                                <rect key="frame" x="128" y="38" width="155.33333333333337" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpV-Dk-S9s">
+                                                <rect key="frame" x="291.33333333333331" y="22.666666666666661" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="FdJ-gI-3dl" eventType="touchUpInside" id="SRA-j3-6FF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="cpV-Dk-S9s" firstAttribute="leading" secondItem="2qi-3c-WJz" secondAttribute="trailing" constant="8" id="15r-oZ-Fs5"/>
+                                            <constraint firstAttribute="trailing" secondItem="cpV-Dk-S9s" secondAttribute="trailing" id="2Zf-GX-XHV"/>
+                                            <constraint firstItem="yGo-6s-eAv" firstAttribute="leading" secondItem="FdJ-gI-3dl" secondAttribute="leading" id="7lJ-5o-Nf7"/>
+                                            <constraint firstItem="2qi-3c-WJz" firstAttribute="leading" secondItem="yGo-6s-eAv" secondAttribute="trailing" constant="8" id="GeN-9o-4Jm"/>
+                                            <constraint firstAttribute="bottom" secondItem="yGo-6s-eAv" secondAttribute="bottom" id="Mu2-AB-xac"/>
+                                            <constraint firstItem="yGo-6s-eAv" firstAttribute="top" secondItem="FdJ-gI-3dl" secondAttribute="top" id="YN2-l0-zf9"/>
+                                            <constraint firstItem="2qi-3c-WJz" firstAttribute="centerY" secondItem="yGo-6s-eAv" secondAttribute="centerY" id="b3p-hx-7Nu"/>
+                                            <constraint firstItem="cpV-Dk-S9s" firstAttribute="centerY" secondItem="yGo-6s-eAv" secondAttribute="centerY" id="qfE-1m-EWF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="yGo-6s-eAv" id="p7e-xF-oWx"/>
+                                            <outlet property="progressView" destination="2qi-3c-WJz" id="rsL-eY-GdD"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qP-IB-R7O" customClass="ImageRowView" customModule="YagomAcademyWantedPreOnboardingConcurrency" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="353" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yDP-vZ-P9h">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="120" height="77"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="KU5-t5-5HZ"/>
+                                                    <constraint firstAttribute="height" constant="80" id="lES-cH-mh8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ace-XJ-6KR">
+                                                <rect key="frame" x="128" y="38" width="155.33333333333337" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnD-zz-hD7">
+                                                <rect key="frame" x="291.33333333333331" y="22.666666666666689" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="4qP-IB-R7O" eventType="touchUpInside" id="x3c-rD-PQE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="yDP-vZ-P9h" firstAttribute="top" secondItem="4qP-IB-R7O" secondAttribute="top" id="29P-hT-bu6"/>
+                                            <constraint firstItem="SnD-zz-hD7" firstAttribute="centerY" secondItem="yDP-vZ-P9h" secondAttribute="centerY" id="MgW-eC-X5W"/>
+                                            <constraint firstAttribute="bottom" secondItem="yDP-vZ-P9h" secondAttribute="bottom" id="PTs-uN-rlk"/>
+                                            <constraint firstItem="ace-XJ-6KR" firstAttribute="centerY" secondItem="yDP-vZ-P9h" secondAttribute="centerY" id="T6M-Pp-O6f"/>
+                                            <constraint firstAttribute="trailing" secondItem="SnD-zz-hD7" secondAttribute="trailing" id="dZe-Dy-dtT"/>
+                                            <constraint firstItem="yDP-vZ-P9h" firstAttribute="leading" secondItem="4qP-IB-R7O" secondAttribute="leading" id="dkv-v2-S6M"/>
+                                            <constraint firstItem="SnD-zz-hD7" firstAttribute="leading" secondItem="ace-XJ-6KR" secondAttribute="trailing" constant="8" id="yIe-Bt-wKQ"/>
+                                            <constraint firstItem="ace-XJ-6KR" firstAttribute="leading" secondItem="yDP-vZ-P9h" secondAttribute="trailing" constant="8" id="yyL-Jh-aBc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="yDP-vZ-P9h" id="idv-aT-wM6"/>
+                                            <outlet property="progressView" destination="ace-XJ-6KR" id="pp4-LU-xRw"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-l6-5wC" customClass="ImageRowView" customModule="YagomAcademyWantedPreOnboardingConcurrency" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="184" width="353" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xs8-tZ-ak3">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="120" height="77"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="5Gv-qY-GcF"/>
+                                                    <constraint firstAttribute="height" constant="80" id="BGx-zP-A7K"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wal-vz-V3b">
+                                                <rect key="frame" x="128" y="38" width="155.33333333333337" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6b-PU-xyg">
+                                                <rect key="frame" x="291.33333333333331" y="22.666666666666689" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="zSp-l6-5wC" eventType="touchUpInside" id="Sn4-tk-XyK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Xs8-tZ-ak3" firstAttribute="top" secondItem="zSp-l6-5wC" secondAttribute="top" id="7xT-Hi-8xR"/>
+                                            <constraint firstItem="T6b-PU-xyg" firstAttribute="centerY" secondItem="Xs8-tZ-ak3" secondAttribute="centerY" id="Vby-B3-sgZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xs8-tZ-ak3" secondAttribute="bottom" id="YeH-NB-ufs"/>
+                                            <constraint firstItem="Wal-vz-V3b" firstAttribute="centerY" secondItem="Xs8-tZ-ak3" secondAttribute="centerY" id="Z2g-Cj-1i6"/>
+                                            <constraint firstAttribute="trailing" secondItem="T6b-PU-xyg" secondAttribute="trailing" id="m5x-eu-u0j"/>
+                                            <constraint firstItem="T6b-PU-xyg" firstAttribute="leading" secondItem="Wal-vz-V3b" secondAttribute="trailing" constant="8" id="nrD-OL-Oip"/>
+                                            <constraint firstItem="Wal-vz-V3b" firstAttribute="leading" secondItem="Xs8-tZ-ak3" secondAttribute="trailing" constant="8" id="ojJ-Y8-Eu3"/>
+                                            <constraint firstItem="Xs8-tZ-ak3" firstAttribute="leading" secondItem="zSp-l6-5wC" secondAttribute="leading" id="qIm-Bw-lZs"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="Xs8-tZ-ak3" id="o9H-qj-has"/>
+                                            <outlet property="progressView" destination="Wal-vz-V3b" id="1EV-Po-Y5v"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-Qj-GXR" customClass="ImageRowView" customModule="YagomAcademyWantedPreOnboardingConcurrency" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="276" width="353" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="804-7u-UUB">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="120" height="77"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="aM3-jJ-RH3"/>
+                                                    <constraint firstAttribute="width" constant="120" id="zuK-T7-96A"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zf5-Fh-MKP">
+                                                <rect key="frame" x="128" y="38" width="155.33333333333337" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60d-nk-W3f">
+                                                <rect key="frame" x="291.33333333333331" y="22.666666666666689" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="D6o-Qj-GXR" eventType="touchUpInside" id="6Zi-m5-oOf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Zf5-Fh-MKP" firstAttribute="centerY" secondItem="804-7u-UUB" secondAttribute="centerY" id="9BP-FZ-IyE"/>
+                                            <constraint firstItem="60d-nk-W3f" firstAttribute="leading" secondItem="Zf5-Fh-MKP" secondAttribute="trailing" constant="8" id="Gbx-NR-xTT"/>
+                                            <constraint firstItem="804-7u-UUB" firstAttribute="top" secondItem="D6o-Qj-GXR" secondAttribute="top" id="L5K-wr-F1g"/>
+                                            <constraint firstAttribute="trailing" secondItem="60d-nk-W3f" secondAttribute="trailing" id="cx8-5P-YVQ"/>
+                                            <constraint firstItem="60d-nk-W3f" firstAttribute="centerY" secondItem="804-7u-UUB" secondAttribute="centerY" id="j2a-i7-YP2"/>
+                                            <constraint firstItem="804-7u-UUB" firstAttribute="leading" secondItem="D6o-Qj-GXR" secondAttribute="leading" id="mE1-Xa-FAE"/>
+                                            <constraint firstItem="Zf5-Fh-MKP" firstAttribute="leading" secondItem="804-7u-UUB" secondAttribute="trailing" constant="8" id="vMo-lS-XD0"/>
+                                            <constraint firstAttribute="bottom" secondItem="804-7u-UUB" secondAttribute="bottom" id="z4f-UP-BHg"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="804-7u-UUB" id="IEX-7F-4fr"/>
+                                            <outlet property="progressView" destination="Zf5-Fh-MKP" id="SfT-RV-i9z"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxV-U3-F6j" customClass="ImageRowView" customModule="YagomAcademyWantedPreOnboardingConcurrency" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="368" width="353" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-Ab-Gqw">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="120" height="77"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="cVP-ua-cXB"/>
+                                                    <constraint firstAttribute="width" constant="120" id="sPD-eD-IKy"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qXc-4L-2hk">
+                                                <rect key="frame" x="128" y="38" width="155.33333333333337" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Em8-rs-dOG">
+                                                <rect key="frame" x="291.33333333333331" y="22.666666666666632" width="61.666666666666686" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="loadImage:" destination="UxV-U3-F6j" eventType="touchUpInside" id="Txh-Ci-tdq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Do4-Ab-Gqw" firstAttribute="top" secondItem="UxV-U3-F6j" secondAttribute="top" id="Bg1-ng-T7t"/>
+                                            <constraint firstItem="Em8-rs-dOG" firstAttribute="leading" secondItem="qXc-4L-2hk" secondAttribute="trailing" constant="8" id="NYP-1K-SBG"/>
+                                            <constraint firstItem="qXc-4L-2hk" firstAttribute="leading" secondItem="Do4-Ab-Gqw" secondAttribute="trailing" constant="8" id="Y9S-j7-7Ya"/>
+                                            <constraint firstItem="Em8-rs-dOG" firstAttribute="centerY" secondItem="Do4-Ab-Gqw" secondAttribute="centerY" id="b5s-pk-t9w"/>
+                                            <constraint firstAttribute="trailing" secondItem="Em8-rs-dOG" secondAttribute="trailing" id="bX4-9v-KKA"/>
+                                            <constraint firstItem="qXc-4L-2hk" firstAttribute="centerY" secondItem="Do4-Ab-Gqw" secondAttribute="centerY" id="cOj-nn-WUy"/>
+                                            <constraint firstItem="Do4-Ab-Gqw" firstAttribute="leading" secondItem="UxV-U3-F6j" secondAttribute="leading" id="fm5-IE-562"/>
+                                            <constraint firstAttribute="bottom" secondItem="Do4-Ab-Gqw" secondAttribute="bottom" id="kc3-fA-tEA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="Do4-Ab-Gqw" id="77s-3e-A0O"/>
+                                            <outlet property="progressView" destination="qXc-4L-2hk" id="JhG-ZM-xAd"/>
+                                        </connections>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-lc-pEq">
+                                        <rect key="frame" x="0.0" y="460" width="353" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Load All Images"/>
+                                        <connections>
+                                            <action selector="loadAllImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="423-dh-B3B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r4U-Am-XEg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DpX-Pn-ggE"/>
+                            <constraint firstItem="r4U-Am-XEg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QQG-qk-DvH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r4U-Am-XEg" secondAttribute="trailing" constant="20" id="bzJ-Qv-Jqd"/>
+                            <constraint firstItem="r4U-Am-XEg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qek-An-Klj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="row1view" destination="FdJ-gI-3dl" id="izO-id-Hno"/>
+                        <outlet property="row2view" destination="4qP-IB-R7O" id="9Td-eV-htB"/>
+                        <outlet property="row3view" destination="zSp-l6-5wC" id="i0s-VH-8a3"/>
+                        <outlet property="row4view" destination="D6o-Qj-GXR" id="xJO-3S-HJQ"/>
+                        <outlet property="row5view" destination="UxV-U3-F6j" id="2Ur-Ps-OQQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="4.9295774647887329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
